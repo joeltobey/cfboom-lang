@@ -41,7 +41,7 @@ component
     }
 
     /**
-     * This is saved as a public function called equals( any other ).
+     * Determines if the given object is equal to this.
      */
     private boolean function $equals( any other ) {
         if (!structKeyExists(arguments, "other"))
