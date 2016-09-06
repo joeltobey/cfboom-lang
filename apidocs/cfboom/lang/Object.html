@@ -265,6 +265,80 @@ Class
 
 
 
+<!-- ========== METHOD SUMMARY =========== -->
+
+<a name="property_summary"><!-- --></a>
+<table class="table table-bordered table-hover">
+	<tr class="info">
+		<th align="left" colspan="5">
+			<strong>Private Variable Summary</strong>
+		</th>
+	</tr>
+	<tr class="info">
+		<th align="left">
+			<strong>type</strong>
+		</th>
+		<th align="left">
+			<strong>variable</strong>
+		</th>
+		<th align="left">
+			<strong>default</strong>
+		</th>
+		<th align="left">
+			<strong>serializable</strong>
+		</th>
+		<th align="left">
+			<strong>required</strong>
+		</th>
+	</tr>
+
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>struct</code>
+		</td>
+		<td>
+			<strong><a href="Object.html#_instance">_instance</A></strong> 
+			<br>
+			
+			<!-- only grab the first sentence of the hint -->
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Private structure to hold instance variables.
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = private</li>
+				
+
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+				<code>structNew()</code>
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	</tr>
+</table>
+
 
 
 	
@@ -309,13 +383,13 @@ Class
 	
 	<tr>
 		<td align="right" valign="top" width="1%">
-			<code>private&nbsp;boolean</code>
+			<code>boolean</code>
 		</td>
 		<td>
-			<strong><a href="Object.html#$equals()">$equals</A></strong>([any other])
+			<strong><a href="Object.html#$equals()">equals</A></strong>([any other])
 			<br>
 			
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is saved as a public function called equals( any other ).
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Determines if the given object is equal to this.
 			
 		</td>
 	</tr>
@@ -472,6 +546,54 @@ Class
 
 <!-- ============ PROPERTY DETAIL ========== -->
 
+	<a name="property_detail"><!-- --></a>
+	<table class="table table-bordered">
+		<tr class="info">
+			<th colspan="1" align="left">
+				<strong>Private Variable Detail</strong>
+			</th>
+		</tr>
+	</table>
+
+	
+		
+		<a name="_instance"><!-- --></a>
+		<h3>_instance</h3>
+
+		<kbd>
+			struct 
+			<strong>variables['_instance']</strong>
+			
+			= {}
+			
+		</kbd>
+
+		<br><br>
+		
+			<p>Private structure to hold instance variables.</p>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			<dd><code>access</code> - private</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+			<dd><code>serializable</code> - false</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+
 
 
 
@@ -493,15 +615,15 @@ Class
 
 
 	
-	<a name="$equals()"><!-- --></a>
-	<h3>$equals</h3>
+	<a name="equals()"><!-- --></a>
+	<h3>equals</h3>
 	
-	<kbd>private boolean <strong>$equals</strong>([any other])</kbd>
+	<kbd>public boolean <strong>equals</strong>([any other])</kbd>
 	
 	<br><br>
 
 	
-		<p>This is saved as a public function called equals( any other ).</p>
+		<p>Determines if the given object is equal to this.</p>
 	
 
 	

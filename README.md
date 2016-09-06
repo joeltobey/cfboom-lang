@@ -14,7 +14,9 @@ Apache License, Version 2.0.
 - ColdFusion 9+
 
 # INSTRUCTIONS
-Just drop into your **modules** folder
+Just drop into your **modules** folder or use CommandBox to install
+
+`box install cfboom-lang`
 
 # METHODS
 Any object that inherits `cfboom.lang.Object` will have these methods for your enjoyment:
@@ -29,3 +31,7 @@ obj.getMeta();
 obj.hashCode();
 obj.toString();
 ```
+
+********************************************************************************
+Copyright Since 2016 Joel Tobey
+********************************************************************************
