@@ -25,6 +25,7 @@ before_install:
 install:
   - box coldbox create app
   # double check in case coldbox failed to be installed
+  - box coldbox create app
   - box install coldbox
   - box install testbox
   # double check in case testbox failed to be installed
