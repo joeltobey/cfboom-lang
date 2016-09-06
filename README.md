@@ -13,4 +13,3 @@ Apache License, Version 2.0.
 
 # INSTRUCTIONS
 Just drop into your **modules** folder
-

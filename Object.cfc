@@ -15,21 +15,35 @@
  */
 
 /**
+ * The root of the cfboom class hierarchy.
+ *
  * @author Joel Tobey
  */
 component
     displayname="Class Object"
     output="false"
 {
-    this['equals'] = $equals;
-
+    /**
+     * Private structure to hold instance variables.
+     */
     variables['_instance'] = {};
 
+    /**
+     * This allows the object to have a function called 'equals'.
+     */
+    this['equals'] = $equals;
+
+    /**
+     * Constructor.
+     */
     public cfboom.lang.Object function init() {
         return this;
     }
 
-    private boolean function $equals(any other) {
+    /**
+     * This is saved as a public function called equals( any other ).
+     */
+    private boolean function $equals( any other ) {
         if (!structKeyExists(arguments, "other"))
             return false;
         if (!isInstanceOf(arguments.other, "cfboom.lang.Object"))
@@ -39,13 +53,19 @@ component
         return false;
     }
 
+    /**
+     * Returns the System identityHashCode of this.
+     */
     public numeric function getIdentityHashCode() {
         if (!structKeyExists(variables, "_identityHashCode")) {
-            variables['_identityHashCode'] = createObject("java","java.lang.System").identityHashCode(this);
+            variables['_identityHashCode'] = createObject("java","java.lang.System").identityHashCode( this );
         }
         return _identityHashCode;
     }
 
+    /**
+     * Returns a unique string to identify this object.
+     */
     public string function getIdentityString() {
         if (!structKeyExists(variables, "_identityString")) {
             variables['_identityString'] = getComponentName() & "@" & createObject("java","java.lang.Integer").toHexString( getIdentityHashCode() );
@@ -53,6 +73,9 @@ component
         return _identityString;
     }
 
+    /**
+     * Returns the object's fullname or name as defined in the meta.
+     */
     public string function getComponentName() {
         if (!structKeyExists(variables, "_componentName")) {
             var meta = getMeta();
@@ -61,16 +84,25 @@ component
         return _componentName;
     }
 
+    /**
+     * Returns the object's metadata.
+     */
     public struct function getMeta() {
         if (!structKeyExists(variables, "_meta"))
             variables['_meta'] = getMetadata();
         return _meta;
     }
 
+    /**
+     * Returns the object's hashcode.
+     */
     public numeric function hashCode() {
         return 0;
     }
 
+    /**
+     * Returns a user-friendly string of the object.
+     */
     public string function toString() {
         return getIdentityString();
     }
