@@ -1,0 +1,8 @@
+version: '3'
+services:
+  cfboom:
+    build: .
+    ports:
+    - "8080:8888"
+    volumes:
+    - .:/var/www/modules_app/cfboom-lang
