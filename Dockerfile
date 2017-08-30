@@ -1,9 +1,12 @@
-FROM joeltobey/lucee
+FROM joeltobey/lucee:5.2-commandbox
 
-RUN apt-key adv --keyserver keys.gnupg.net --recv 6DA70622 && \
-	echo "deb http://downloads.ortussolutions.com/debs/noarch /" | tee -a /etc/apt/sources.list.d/commandbox.list && \
-	apt-get update && \
-	apt-get install commandbox && \
-	cd /var/www && \
-	box install coldbox && \
-	box install testbox
+# Create Lucee configs
+COPY docker/lucee-server.xml /opt/lucee/server/lucee-server/context/lucee-server.xml
+COPY docker/lucee-web.xml.cfm /opt/lucee/web/lucee-web.xml.cfm
+COPY docker/log4j.properties /opt/lucee/web/log4j.properties
+
+RUN cd /var/www && \
+    box coldbox create app myapp && \
+    box install testbox && \
+    cd modules_app/ && \
+    mkdir cfboom-lang/

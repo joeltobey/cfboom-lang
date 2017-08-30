@@ -17,39 +17,41 @@
 /**
  * @author Joel Tobey
  */
-component {
+component
+  output="false"
+{
 
-    // Module Properties
-    this.title              = "cfboom lang";
-    this.author             = "Joel Tobey";
-    this.webURL             = "https://github.com/joeltobey/cfboom-lang";
-    this.description        = "Provides classes that are fundamental to the design of the cfboom objects and services. The most important class is Object, which is the root of the class hierarchy.";
-    this.version            = "1.0.0";
-    // If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
-    this.viewParentLookup   = true;
-    // If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
-    this.layoutParentLookup = true;
-    // Module Entry Point
-    this.entryPoint         = "cfboom/lang";
-    // Model Namespace
-    this.modelNamespace     = "cfboomLang";
-    // CF Mapping
-    this.cfmapping          = "cfboom/lang";
-    // Auto-map models
-    this.autoMapModels      = false;
-    // Module Dependencies
-    this.dependencies       = [];
+  // Module Properties
+  this.title              = "cfboom lang";
+  this.author             = "Joel Tobey";
+  this.webURL             = "https://github.com/joeltobey/cfboom-lang";
+  this.description        = "Provides classes that are fundamental to the design of the cfboom objects and services. The most important class is Object, which is the root of the class hierarchy.";
+  this.version            = "1.1.0";
+  // If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
+  this.viewParentLookup   = true;
+  // If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
+  this.layoutParentLookup = true;
+  // Module Entry Point
+  this.entryPoint         = "cfboom/lang";
+  // Model Namespace
+  this.modelNamespace     = "cfboomLang";
+  // CF Mapping
+  this.cfmapping          = "cfboom/lang";
+  // Auto-map models
+  this.autoMapModels      = false;
+  // Module Dependencies
+  this.dependencies       = [];
 
-    function configure(){}
+  function configure(){}
 
-    /**
-     * Fired when the module is registered and activated.
-     */
-    function onLoad(){}
+  /**
+   * Fired when the module is registered and activated.
+   */
+  function onLoad(){}
 
-    /**
-     * Fired when the module is unregistered and unloaded
-     */
-    function onUnload(){}
+  /**
+   * Fired when the module is unregistered and unloaded
+   */
+  function onUnload(){}
 
 }

@@ -29,6 +29,11 @@ settings.xml
 # PDT-specific
 .buildpath
 
+#################
+## IntelliJ
+#################
+
+.idea/
 
 #################
 ## Visual Studio
