@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 the original author or authors and Joel Tobey <joeltobey@gmail.com>
+ * Copyright 2016-2017 the original author or authors and Joel Tobey <joeltobey@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,90 +20,97 @@
  * @author Joel Tobey
  */
 component
-    displayname="Class Object"
-    output="false"
+  displayname="Class Object"
+  output="false"
 {
-    /**
-     * Private structure to hold instance variables.
-     */
-    variables['_instance'] = {};
+  /**
+   * Global Java Classes.
+   */
+  variables['System'] = createObject("java", "java.lang.System");
+  variables['Integer'] = createObject("java","java.lang.Integer");
 
-    /**
-     * This allows the object to have a function called 'equals'.
-     */
-    this['equals'] = $equals;
+  /**
+   * Private structure to hold instance variables.
+   */
+  variables['_instance'] = {};
 
-    /**
-     * Constructor.
-     */
-    public cfboom.lang.Object function init() {
-        return this;
+  /**
+   * This allows the object to have a function called 'equals'.
+   */
+  this['equals'] = $equals;
+
+  /**
+   * Constructor.
+   */
+  public cfboom.lang.Object function init() {
+    return this;
+  }
+
+  /**
+   * Determines if the given object is equal to this.
+   */
+  private boolean function $equals( any other ) {
+    if (!structKeyExists(arguments, "other"))
+      return false;
+    if (!isInstanceOf(arguments.other, "cfboom.lang.Object"))
+      return false;
+    if (getIdentityHashCode() == arguments.other.getIdentityHashCode())
+      return true;
+    return false;
+  }
+
+  /**
+   * Returns the System identityHashCode of this.
+   */
+  public numeric function getIdentityHashCode() {
+    if (!structKeyExists(variables, "_identityHashCode")) {
+      variables['_identityHashCode'] = System.identityHashCode( this );
     }
+    return _identityHashCode;
+  }
 
-    /**
-     * Determines if the given object is equal to this.
-     */
-    private boolean function $equals( any other ) {
-        if (!structKeyExists(arguments, "other"))
-            return false;
-        if (!isInstanceOf(arguments.other, "cfboom.lang.Object"))
-            return false;
-        if (getIdentityHashCode() == arguments.other.getIdentityHashCode())
-            return true;
-        return false;
+  /**
+   * Returns a unique string to identify this object.
+   */
+  public string function getIdentityString() {
+    if (!structKeyExists(variables, "_identityString")) {
+      variables['_identityString'] = getComponentName() & "@" & Integer.toHexString( getIdentityHashCode() );
     }
+    return _identityString;
+  }
 
-    /**
-     * Returns the System identityHashCode of this.
-     */
-    public numeric function getIdentityHashCode() {
-        if (!structKeyExists(variables, "_identityHashCode")) {
-            variables['_identityHashCode'] = createObject("java","java.lang.System").identityHashCode( this );
-        }
-        return _identityHashCode;
+  /**
+   * Returns the object's fullname or name as defined in the meta.
+   */
+  public string function getComponentName() {
+    if (!structKeyExists(variables, "_componentName")) {
+      var meta = getMeta();
+      variables['_componentName'] = structKeyExists(meta, "fullname") ? meta.fullname : meta.name;
     }
+    return _componentName;
+  }
 
-    /**
-     * Returns a unique string to identify this object.
-     */
-    public string function getIdentityString() {
-        if (!structKeyExists(variables, "_identityString")) {
-            variables['_identityString'] = getComponentName() & "@" & createObject("java","java.lang.Integer").toHexString( getIdentityHashCode() );
-        }
-        return _identityString;
-    }
+  /**
+   * Returns the object's metadata.
+   */
+  public struct function getMeta() {
+    if (!structKeyExists(variables, "_meta"))
+      variables['_meta'] = getMetadata();
+    return _meta;
+  }
 
-    /**
-     * Returns the object's fullname or name as defined in the meta.
-     */
-    public string function getComponentName() {
-        if (!structKeyExists(variables, "_componentName")) {
-            var meta = getMeta();
-            variables['_componentName'] = structKeyExists(meta, "fullname") ? meta.fullname : meta.name;
-        }
-        return _componentName;
-    }
+  /**
+   * Returns the object's hashcode.
+   */
+  public numeric function hashCode() {
+    return javaCast("int", 0);
+  }
 
-    /**
-     * Returns the object's metadata.
-     */
-    public struct function getMeta() {
-        if (!structKeyExists(variables, "_meta"))
-            variables['_meta'] = getMetadata();
-        return _meta;
-    }
+  /**
+   * Returns a user-friendly string of the object.
+   */
+  public string function toString() {
+    return getIdentityString();
+  }
 
-    /**
-     * Returns the object's hashcode.
-     */
-    public numeric function hashCode() {
-        return 0;
-    }
-
-    /**
-     * Returns a user-friendly string of the object.
-     */
-    public string function toString() {
-        return getIdentityString();
-    }
 }
