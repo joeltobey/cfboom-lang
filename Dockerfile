@@ -10,3 +10,5 @@ RUN cd /var/www && \
     box install testbox && \
     cd modules_app/ && \
     mkdir cfboom-lang/
+
+COPY . /var/www/modules_app/cfboom-lang/

@@ -1,6 +1,6 @@
 {
     "name":"<cfboom/> lang",
-    "version":"1.1.0",
+    "version":"1.1.1",
     "author":"Joel Tobey <joeltobey@gmail.com>",
     "slug":"cfboom-lang",
     "type":"modules",
@@ -10,7 +10,7 @@
         "type":"git",
         "url":"https://github.com/joeltobey/cfboom-lang"
     },
-    "location": "https://github.com/joeltobey/cfboom-lang/releases/download/v1.1.0/cfboom-lang-v1.1.0.zip",
+    "location":"https://github.com/joeltobey/cfboom-lang/releases/download/v1.1.1/cfboom-lang-v1.1.1.zip",
     "shortDescription":"Provides classes that are fundamental to the design of the <cfboom/> objects and services. The most important class is Object, which is the root of the class hierarchy.",
     "license":[
         {
