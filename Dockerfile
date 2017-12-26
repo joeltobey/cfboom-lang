@@ -8,7 +8,9 @@ COPY docker/log4j.properties /opt/lucee/web/log4j.properties
 RUN cd /var/www && \
     box coldbox create app myapp && \
     box install testbox && \
+    box install docbox && \
     cd modules_app/ && \
     mkdir cfboom-lang/
 
+COPY docker/generateDocs.cfm /var/www/generateDocs.cfm
 COPY . /var/www/modules_app/cfboom-lang/
