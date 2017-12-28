@@ -12,5 +12,6 @@ RUN cd /var/www && \
     cd modules_app/ && \
     mkdir cfboom-lang/
 
+COPY docker/Coldbox.cfc /var/www/config/Coldbox.cfc
 COPY docker/generateDocs.cfm /var/www/generateDocs.cfm
 COPY . /var/www/modules_app/cfboom-lang/

@@ -30,6 +30,6 @@
   docbox.generate(
     source  = expandPath( "/modules_app/cfboom-lang" ),
     mapping = "cfboom.lang",
-    excludes = "tests|ModuleConfig.cfc"
+    excludes = "tests|ModuleConfig.cfc|Coldbox.cfc"
   );
 </cfscript>
