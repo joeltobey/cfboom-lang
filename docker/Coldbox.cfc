@@ -9,7 +9,7 @@ component
     // coldbox directives
     coldbox = {
       //Application Setup
-      appName = "cfboom-gson",
+      appName = "cfboom-lang",
       eventName = "event",
 
       //Development Settings
