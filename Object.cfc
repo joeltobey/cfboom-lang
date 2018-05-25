@@ -26,8 +26,16 @@ component
   /**
    * Global Java Classes.
    */
-  variables['System'] = createObject("java", "java.lang.System");
+  variables['Boolean'] = createObject("java","java.lang.Boolean");
+  variables['Byte'] = createObject("java","java.lang.Byte");
+  variables['Character'] = createObject("java","java.lang.Character");
+  variables['Double'] = createObject("java","java.lang.Double");
+  variables['Float'] = createObject("java","java.lang.Float");
   variables['Integer'] = createObject("java","java.lang.Integer");
+  variables['Long'] = createObject("java","java.lang.Long");
+  variables['Short'] = createObject("java","java.lang.Short");
+  variables['String'] = createObject("java","java.lang.String");
+  variables['System'] = createObject("java", "java.lang.System");
 
   /**
    * Private structure to hold instance variables.
